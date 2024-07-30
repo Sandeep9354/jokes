@@ -13,6 +13,19 @@ async function fetchdata(){
     paraone.innerHTML=data.data[1].jokeContent;
     
 console.log(data.data[0].jokeContent , paraone.innerHTML=data.data[1].jokeContent)
+     speak(p);
+        speak(pone);
+
+
+function speak(text) {
+    const speech = new SpeechSynthesisUtterance();
+    speech.lang = "hi-IN";  // Set language to Hindi
+    speech.text = text;
+    window.speechSynthesis.speak(speech);
+}
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
 
 if(para===""&&paraone===""){
     alert("please Check Your Internet Connection")
@@ -26,6 +39,9 @@ else{
 headbtn.addEventListener("click",function(){
    
    body.removeChild(head)
+    
+    speak(p);
+    speak(pone);
   
    
 })
